@@ -59,15 +59,17 @@ app.get('/update-cobj', (req, res) => {
 });
 
 // STEP 13 — POST /update-cobj Route (Submit Form)
+// STEP 13 — POST /update-cobj Route (Submit Form)
 app.post('/update-cobj', async (req, res) => {
-    const { name, breed, age } = req.body;
+    // Destructure properties matching the form inputs
+    const { firstname, lastname, email } = req.body;
     const createUrl = `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_TYPE}`;
 
     const payload = {
         properties: {
-            firstname: name,
-            lastname: breed,
-            email: `${name.toLowerCase().replace(/\s+/g, '')}${Math.floor(Math.random() * 1000)}@example.com`
+            firstname: firstname,
+            lastname: lastname,
+            email: email
         }
     };
 
