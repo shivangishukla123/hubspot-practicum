@@ -1,0 +1,23 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        .form-wrapper
+            h1 Add / Update CRM Record
+            p
+                a(href="/") Return to the homepage
+            
+            form(method="POST" action="/update-cobj")
+                label(for="firstname") First Name
+                input(type="text" name="firstname" id="firstname" required)
+                
+                label(for="lastname") Last Name / Breed
+                input(type="text" name="lastname" id="lastname" required)
+                
+                label(for="email") Email
+                input(type="email" name="email" id="email" required)
+                
+                input(type="submit" value="Submit")
